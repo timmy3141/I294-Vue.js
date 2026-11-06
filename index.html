@@ -7,13 +7,10 @@
 </head>
 
 <body>
-
     <div id="app">
-        <label>Votre nom :</label>
-
-        <input type="text" v-model="username">
-
-        <p>Bonjour {{ username }} !</p>
+        <p>{{ message }}</p>
+        <button @click="increment(); sayHello()">Cliques si tu l'oses</button>
+        <p>Nombre de clics : {{ clicks }}</p>
     </div>
 
     <!-- Chargement de Vue.js 3 depuis le CDN -->
@@ -25,23 +22,18 @@
         createApp({
             data() {
                 return {
-                    username: ''
+                    message: 'Salut toi !',
+                    clicks: 0
                 }
             },
             
             methods: {
-                increaseQuantity() {
-                    this.quantity++
+                increment() {
+                    this.clicks++
                 },
 
-                decreaseQuantity() {
-                    this.quantity--
-                }
-            },
-
-            computed: {
-                totalPrice() {
-                    return this.price * this.quantity
+                sayHello() {
+                    alert("QUI T'A PERMIS DE CLIQUER SUR MON BOUTON !!!")
                 }
             }
 
