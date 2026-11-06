@@ -9,18 +9,12 @@
 <body>
 
     <div id="app">
-        <h1>{{ name }}</h1>
-        <p> Price : {{ price }}</p>
-        <p> Quantity : {{ quantity }}</p>
-        
-        <button @click="decreaseQuantity">-</button>
-        <button @click="increaseQuantity">+</button>
-
-        <p v-if="isAvailable">Produit disponible !</p>
-        <p v-else>Produit indisponible.</p>
-
-        <h3>Total : {{ totalPrice }} €</h3>
-
+        <h2>Nos produits</h2>
+            <ul>
+                <li v-for="product in products">
+                    {{ product }}
+                </li>
+            </ul>
     </div>
 
     <!-- Chargement de Vue.js 3 depuis le CDN -->
@@ -32,10 +26,12 @@
         createApp({
             data() {
                 return {
-                    name: 'Steak',
-                    price: 22.5,
-                    quantity: 6,
-                    isAvailable: true
+                    products: [
+                        'Steak',
+                        'Saucisse',
+                        'Brochette',
+                        'Entrecote'
+                    ]
                 }
             },
             
