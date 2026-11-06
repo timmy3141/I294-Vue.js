@@ -16,6 +16,7 @@
         <button @click="decreaseQuantity">-</button>
         <button @click="increaseQuantity">+</button>
 
+        <h3>Total : {{ totalPrice }} €</h3>
 
     </div>
 
@@ -41,6 +42,12 @@
 
                 decreaseQuantity() {
                     this.quantity--
+                }
+            },
+
+            computed: {
+                totalPrice() {
+                    return this.price * this.quantity
                 }
             }
 
