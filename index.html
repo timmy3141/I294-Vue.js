@@ -9,13 +9,11 @@
 <body>
 
     <div id="app">
-        <h2>Nos produits</h2>
-        <ul>
-            <li v-for="product in products":key="product.id">
-                {{ product.name }} -
-                {{ product.price }} €
-            </li>
-        </ul>
+        <label>Votre nom :</label>
+
+        <input type="text" v-model="username">
+
+        <p>Bonjour {{ username }} !</p>
     </div>
 
     <!-- Chargement de Vue.js 3 depuis le CDN -->
@@ -27,12 +25,7 @@
         createApp({
             data() {
                 return {
-                    products: [
-                        { id: 1, name: 'Steak', price: 12 },
-                        { id: 2, name: 'Saucisse', price: 80 },
-                        { id: 3, name: 'Brochette', price: 25 },
-                        { id: 4, name: 'Entrecote', price: 36 }
-                    ]
+                    username: ''
                 }
             },
             
