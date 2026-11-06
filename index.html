@@ -10,8 +10,13 @@
 
     <div id="app">
         <h1>{{ name }}</h1>
-        <p> Country : {{ country }}</p>
-        <p> Population : {{ population }}</p>
+        <p> Price : {{ price }}</p>
+        <p> Quantity : {{ quantity }}</p>
+        
+        <button @click="decreaseQuantity">-</button>
+        <button @click="increaseQuantity">+</button>
+
+
     </div>
 
     <!-- Chargement de Vue.js 3 depuis le CDN -->
@@ -23,11 +28,22 @@
         createApp({
             data() {
                 return {
-                    name: 'Madrid',
-                    country: 'Spain',
-                    population: 3480000
+                    name: 'Steak',
+                    price: 22.5,
+                    quantity: 5
+                }
+            },
+            
+            methods: {
+                increaseQuantity() {
+                    this.quantity++
+                },
+
+                decreaseQuantity() {
+                    this.quantity--
                 }
             }
+
         }).mount('#app')
     </script>
 
