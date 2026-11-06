@@ -16,6 +16,9 @@
         <button @click="decreaseQuantity">-</button>
         <button @click="increaseQuantity">+</button>
 
+        <p v-if="isAvailable">Produit disponible !</p>
+        <p v-else>Produit indisponible.</p>
+
         <h3>Total : {{ totalPrice }} €</h3>
 
     </div>
@@ -31,7 +34,8 @@
                 return {
                     name: 'Steak',
                     price: 22.5,
-                    quantity: 5
+                    quantity: 6,
+                    isAvailable: true
                 }
             },
             
