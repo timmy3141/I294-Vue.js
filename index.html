@@ -9,7 +9,9 @@
 <body>
 
     <div id="app">
-        <h1>{{ message }}</h1>
+        <h1>{{ name }}</h1>
+        <p> Country : {{ country }}</p>
+        <p> Population : {{ population }}</p>
     </div>
 
     <!-- Chargement de Vue.js 3 depuis le CDN -->
@@ -21,7 +23,9 @@
         createApp({
             data() {
                 return {
-                    message: 'Bonjour Vue.js !'
+                    name: 'Madrid',
+                    country: 'Spain',
+                    population: 3480000
                 }
             }
         }).mount('#app')
